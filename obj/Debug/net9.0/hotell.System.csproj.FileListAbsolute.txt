@@ -1,0 +1,14 @@
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.AssemblyInfoInputs.cache
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.AssemblyInfo.cs
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.csproj.CoreCompileInputs.cache
+C:\Users\filiz\Desktop\hotell.System\bin\Debug\net9.0\hotell.System.exe
+C:\Users\filiz\Desktop\hotell.System\bin\Debug\net9.0\hotell.System.deps.json
+C:\Users\filiz\Desktop\hotell.System\bin\Debug\net9.0\hotell.System.runtimeconfig.json
+C:\Users\filiz\Desktop\hotell.System\bin\Debug\net9.0\hotell.System.dll
+C:\Users\filiz\Desktop\hotell.System\bin\Debug\net9.0\hotell.System.pdb
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.dll
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\refint\hotell.System.dll
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.pdb
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.genruntimeconfig.cache
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\ref\hotell.System.dll
