@@ -31,9 +31,14 @@ public string Name { get; set; } = "";
          }
       }
    
-     
+     /*
+     this is for keeping  track of the active bookings of the guests.
+     */
  public List <Booking> ActiveBookings { get; set; } = new List<Booking>();
+/*
+this is the constructor for the Guest class.
 
+*/
  public Guest (string name ,string email)
    {
       GuestId = $"G{guestcounter:D3}";
@@ -47,7 +52,13 @@ public string Name { get; set; } = "";
    {
      return value.Contains("@") && value.Contains(".");
    }
-  public abstract decimal GetDiscount(decimal basePrice);
+/*
+this is an abstarct method for calcualting the discount.
+
+
+*/
+ 
+   public abstract decimal GetDiscount(decimal basePrice);
 
     
 }

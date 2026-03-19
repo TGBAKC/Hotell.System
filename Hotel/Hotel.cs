@@ -16,6 +16,14 @@ public class Hotel
 
     public void RegisterGuest(Guest guest)
     {
+if(guest ==null)
+        {
+            Console.WriteLine("Guest cannot be null.");
+            return;
+        }
+
+
+
         if (Guests.Any(g => g.Email == guest.Email))
         {
             Console.WriteLine("Email is already registered.");
@@ -26,19 +34,27 @@ public class Hotel
         Console.WriteLine($"Guest {guest.Name} registered successfully.");
     }
 
-    public void GetAvailableRooms(DateTime checkIn, DateTime checkOut)
+   public void GetAvailableRooms(DateTime checkIn, DateTime checkOut)
+{
+    if (checkIn >= checkOut)
     {
-        if (checkIn >= checkOut)
-        {
-            Console.WriteLine("Check-out date must be after check-in date.");
-            return;
-        }
-
-        foreach (var room in Rooms.Where(r => r.IsAvailable))
-        {
-            Console.WriteLine($"Room {room.RoomNumber} - {room.RoomType} - {room.PricePerNight:C} per night");
-        }
+        Console.WriteLine("Check-out date must be after check-in date.");
+        return;
     }
+
+    var availableRooms = Rooms.Where(r => r.IsAvailable).ToList();
+
+    if (!availableRooms.Any())
+    {
+        Console.WriteLine("No available rooms found for the selected period.");
+        return;
+    }
+
+    foreach (var room in availableRooms)
+    {
+        Console.WriteLine($"Room {room.RoomNumber} - {room.RoomType} - {room.PricePerNight:C} per night");
+    }
+ }
 
     public void CreateBooking(string guestId, string roomNumber, DateTime checkIn, DateTime checkOut, IPayable payment)
     {
@@ -54,7 +70,7 @@ public class Hotel
             {
                 if (guest.ActiveBookings.Count >= guest.MaxActiveBookings)
                 {
-                    Console.WriteLine($"Guest {guest.Name} already has an active booking.");
+                  Console.WriteLine($"Guest {guest.Name} has reached the maximum number of active bookings.");
                     return;
                 }
 
@@ -113,16 +129,22 @@ public class Hotel
 
         Console.WriteLine("Booking not found or already cancelled.");
     }
+public void GetGuestBookings(string guestId)
+{
+    var guestBookings = BookingHistory
+        .Where(b => b.Guest.GuestId == guestId && b.IsActive)
+        .ToList();
 
-    public void GetGuestBookings(string guestId)
+    if (!guestBookings.Any())
     {
-        foreach (var booking in BookingHistory)
-        {
-            if (booking.Guest.GuestId == guestId && booking.IsActive)
-            {
-                Console.WriteLine(
-                    $"Booking ID: {booking.BookingId}, Room: {booking.Room.RoomNumber}, Check-in: {booking.CheckInDate.ToShortDateString()}, Check-out: {booking.CheckOutDate.ToShortDateString()}, Total Price: {booking.TotalPrice:C}");
-            }
-        }
+        Console.WriteLine("No active bookings found for this guest.");
+        return;
     }
+
+    foreach (var booking in guestBookings)
+    {
+        Console.WriteLine(
+            $"Booking ID: {booking.BookingId}, Room: {booking.Room.RoomNumber}, Check-in: {booking.CheckInDate.ToShortDateString()}, Check-out: {booking.CheckOutDate.ToShortDateString()}, Total Price: {booking.TotalPrice:C}");
+    }
+}
 }

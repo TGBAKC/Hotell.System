@@ -6,7 +6,7 @@ this is class Booking which has properties like BookingId, Guest, Room, CheckInD
 
 public class Booking
 {
-  public string   BookingId { get; set; }
+  public string   BookingId { get; private set; }
     
     private static int counter = 1;
     public Booking()
@@ -67,6 +67,7 @@ this method calculates the tot;a price of the booking .
     {
         Room.IsAvailable = true;
         IsActive = false;
+        Guest.ActiveBookings.Remove(this);
         Console.WriteLine("Checked out successfully.");
     }
         

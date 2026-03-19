@@ -12,3 +12,4 @@ C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\refint\hotell.System.dll
 C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.pdb
 C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.genruntimeconfig.cache
 C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\ref\hotell.System.dll
+C:\Users\filiz\Desktop\hotell.System\obj\Debug\net9.0\hotell.System.sourcelink.json
