@@ -119,9 +119,7 @@ if(guest ==null)
         {
             if (booking.BookingId == bookingId && booking.IsActive)
             {
-                booking.IsActive = false;
-                booking.Room.IsAvailable = true;
-                booking.Guest.ActiveBookings.Remove(booking);
+              booking.Cancel();
                 Console.WriteLine($"Booking {bookingId} cancelled successfully.");
                 return;
             }

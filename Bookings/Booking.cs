@@ -21,9 +21,9 @@ public class Booking
     public DateTime CheckInDate { get; set; }
     public DateTime CheckOutDate { get; set; }
     public IPayable PaymentMethod  { get; set; }
-    public bool IsPaid { get; set; }
+    public bool IsPaid { get; private set; }
     public decimal TotalPrice { get; set; }
-  public bool IsActive { get; set; }
+  public bool IsActive { get; private set; }
 /*
 this method calculates the tot;a price of the booking .
 */
@@ -74,7 +74,12 @@ this method calculates the tot;a price of the booking .
 
 
 
-
+public void Cancel()
+{
+    IsActive = false;
+    Room.IsAvailable = true;
+    Guest.ActiveBookings.Remove(this);
+}
 
 
 
